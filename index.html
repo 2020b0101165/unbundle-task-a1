@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .controls button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+    </style>
+    <title>Product Carousel</title>
+</head>
+<body>
+
+<div class="container mx-auto mt-8">
+    <div class="carousel" id="carousel">
+        <div class="slide">
+            <img src="https://www.customlogocases.com/wp-content/uploads/2020/04/leather-phone-cases.jpeg" style="height: 600px;" alt="Product 1">
+            <div class="product-info">
+                <h3>Product 1</h3>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="data:image/jpeg;base64,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" style="height: 600px;" alt="Product 2">
+            <div class="product-info">
+                <h3>Product 2</h3>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="https://www.customlogocases.com/wp-content/uploads/2020/04/phone-skins.png" style="height: 600px;" alt="Product 2">
+            <div class="product-info">
+                <h3>Product 3</h3>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="https://www.wrappz.com/media/categoryimage/cache/1000x1000/personalised-phone-cases-angle.jpg" style="height: 600px;" alt="Product 2">
+            <div class="product-info">
+                <h3>Product 4</h3>
+            </div>
+        </div>
+    </div>
+    <div class="controls">
+        <button onclick="prevSlide(); restartTimer();">Prev</button>
+        <button onclick="nextSlide(); restartTimer();">Next</button>
+    </div>
+    
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
